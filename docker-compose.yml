@@ -1,0 +1,8 @@
+services:
+  nba_predictor:
+    build: .
+    container_name: nba_predictor
+    command: ["bash", "collect_data.sh"]
+    volumes:
+      - ./:/app
+    working_dir: /app
