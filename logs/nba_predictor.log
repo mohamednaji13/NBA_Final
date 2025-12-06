@@ -1,0 +1,404 @@
+[2025-12-03 03:39:09] [INFO] [__main__] Fetching schedule for season 2019-20
+[2025-12-03 03:39:16] [INFO] [__main__] Fetching schedule for season 2020-21
+[2025-12-03 03:39:16] [INFO] [__main__] Fetching schedule for season 2021-22
+[2025-12-03 03:39:17] [INFO] [__main__] Fetching schedule for season 2022-23
+[2025-12-03 03:39:17] [INFO] [__main__] Fetching schedule for season 2023-24
+[2025-12-03 03:39:17] [INFO] [__main__] Saved schedule to /Users/mohamed/Desktop/Projects/NBA_Final/data/raw/games_schedule_5_seasons.csv with 13331 rows
+[2025-12-03 03:39:18] [INFO] [__main__] Proxy disabled; calling NBA API directly.
+[2025-12-03 03:39:18] [INFO] [__main__] Queue initialized with 6665 unique GAME_IDs.
+[2025-12-03 03:39:18] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900001 (cycle #1, remaining in queue=6664)
+[2025-12-03 03:39:48] [WARNING] [__main__] [Boxscores V3] GAME_ID=0011900001 attempt 1/5 failed: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=30) — retrying in 1.5s
+[2025-12-03 03:39:48] [INFO] [__main__] Sleeping 1.5s (retry for GAME_ID=0011900001)
+[2025-12-03 03:41:12] [INFO] [__main__] Fetching schedule for season 2019-20
+[2025-12-03 03:41:12] [INFO] [__main__] Fetching schedule for season 2020-21
+[2025-12-03 03:41:13] [INFO] [__main__] Fetching schedule for season 2021-22
+[2025-12-03 03:41:13] [INFO] [__main__] Fetching schedule for season 2022-23
+[2025-12-03 03:41:13] [INFO] [__main__] Fetching schedule for season 2023-24
+[2025-12-03 03:41:14] [INFO] [__main__] Saved schedule to /Users/mohamed/Desktop/Projects/NBA_Final/data/raw/games_schedule_5_seasons.csv with 13331 rows
+[2025-12-03 03:41:14] [INFO] [__main__] Proxy disabled; calling NBA API directly.
+[2025-12-03 03:41:14] [INFO] [__main__] Queue initialized with 6665 unique GAME_IDs.
+[2025-12-03 03:41:14] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900001 (cycle #1, remaining in queue=6664)
+[2025-12-03 03:41:44] [WARNING] [__main__] [Boxscores V3] GAME_ID=0011900001 attempt 1/5 failed: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=30) — retrying in 1.5s
+[2025-12-03 03:41:44] [INFO] [__main__] Sleeping 1.5s (retry for GAME_ID=0011900001)
+[2025-12-03 03:42:15] [WARNING] [__main__] [Boxscores V3] GAME_ID=0011900001 attempt 2/5 failed: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=30) — retrying in 3.0s
+[2025-12-03 03:42:15] [INFO] [__main__] Sleeping 3.0s (retry for GAME_ID=0011900001)
+[2025-12-03 03:42:49] [WARNING] [__main__] [Boxscores V3] GAME_ID=0011900001 attempt 3/5 failed: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=30) — retrying in 6.0s
+[2025-12-03 03:42:49] [INFO] [__main__] Sleeping 6.0s (retry for GAME_ID=0011900001)
+[2025-12-03 03:43:25] [WARNING] [__main__] [Boxscores V3] GAME_ID=0011900001 attempt 4/5 failed: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=30) — retrying in 12.0s
+[2025-12-03 03:43:25] [INFO] [__main__] Sleeping 12.0s (retry for GAME_ID=0011900001)
+[2025-12-03 03:43:46] [INFO] [__main__] Fetching schedule for season 2019-20
+[2025-12-03 03:43:46] [INFO] [__main__] Fetching schedule for season 2020-21
+[2025-12-03 03:43:46] [INFO] [__main__] Fetching schedule for season 2021-22
+[2025-12-03 03:43:47] [INFO] [__main__] Fetching schedule for season 2022-23
+[2025-12-03 03:43:47] [INFO] [__main__] Fetching schedule for season 2023-24
+[2025-12-03 03:43:47] [INFO] [__main__] Saved schedule to /Users/mohamed/Desktop/Projects/NBA_Final/data/raw/games_schedule_5_seasons.csv with 13331 rows
+[2025-12-03 03:43:47] [INFO] [__main__] Proxy disabled; calling NBA API directly.
+[2025-12-03 03:43:47] [INFO] [__main__] Queue initialized with 6665 unique GAME_IDs.
+[2025-12-03 03:43:47] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900001 (cycle #1, remaining in queue=6664)
+[2025-12-03 03:44:17] [WARNING] [__main__] [Boxscores V3] GAME_ID=0011900001 attempt 1/5 failed: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=30) — retrying in 1.5s
+[2025-12-03 03:44:17] [INFO] [__main__] Sleeping 1.5s (retry for GAME_ID=0011900001)
+[2025-12-03 03:44:49] [WARNING] [__main__] [Boxscores V3] GAME_ID=0011900001 attempt 2/5 failed: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=30) — retrying in 3.0s
+[2025-12-03 03:44:49] [INFO] [__main__] Sleeping 3.0s (retry for GAME_ID=0011900001)
+[2025-12-03 03:45:22] [WARNING] [__main__] [Boxscores V3] GAME_ID=0011900001 attempt 3/5 failed: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=30) — retrying in 6.0s
+[2025-12-03 03:45:22] [INFO] [__main__] Sleeping 6.0s (retry for GAME_ID=0011900001)
+[2025-12-03 03:45:58] [WARNING] [__main__] [Boxscores V3] GAME_ID=0011900001 attempt 4/5 failed: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=30) — retrying in 12.0s
+[2025-12-03 03:45:58] [INFO] [__main__] Sleeping 12.0s (retry for GAME_ID=0011900001)
+[2025-12-03 03:46:40] [WARNING] [__main__] [Boxscores V3] GAME_ID=0011900001 attempt 5/5 failed: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=30) — retrying in 24.0s
+[2025-12-03 03:46:40] [INFO] [__main__] Sleeping 24.0s (retry for GAME_ID=0011900001)
+[2025-12-03 03:47:04] [ERROR] [__main__] [Boxscores V3] Exhausted 5 retries for GAME_ID=0011900001
+[2025-12-03 03:47:04] [WARNING] [__main__] [Boxscores V3] Re-queueing GAME_ID=0011900001 at end of queue (attempt cycles so far: 1)
+[2025-12-03 03:47:04] [INFO] [__main__] Sleeping 1.5s (after requeue)
+[2025-12-03 03:47:06] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900002 (cycle #1, remaining in queue=6664)
+[2025-12-03 03:47:36] [WARNING] [__main__] [Boxscores V3] GAME_ID=0011900002 attempt 1/5 failed: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=30) — retrying in 1.5s
+[2025-12-03 03:47:36] [INFO] [__main__] Sleeping 1.5s (retry for GAME_ID=0011900002)
+[2025-12-03 03:48:07] [WARNING] [__main__] [Boxscores V3] GAME_ID=0011900002 attempt 2/5 failed: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=30) — retrying in 3.0s
+[2025-12-03 03:48:07] [INFO] [__main__] Sleeping 3.0s (retry for GAME_ID=0011900002)
+[2025-12-03 03:48:13] [INFO] [__main__] Fetching schedule for season 2019-20
+[2025-12-03 03:48:13] [INFO] [__main__] Fetching schedule for season 2020-21
+[2025-12-03 03:48:13] [INFO] [__main__] Fetching schedule for season 2021-22
+[2025-12-03 03:48:13] [INFO] [__main__] Fetching schedule for season 2022-23
+[2025-12-03 03:48:14] [INFO] [__main__] Fetching schedule for season 2023-24
+[2025-12-03 03:48:14] [INFO] [__main__] Saved schedule to /Users/mohamed/Desktop/Projects/NBA_Final/data/raw/games_schedule_5_seasons.csv with 13331 rows
+[2025-12-03 03:48:14] [INFO] [__main__] Proxy pool enabled with 7 endpoints.
+[2025-12-03 03:48:14] [INFO] [__main__] Queue initialized with 6665 unique GAME_IDs.
+[2025-12-03 03:48:14] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900001 (cycle #1, remaining in queue=6664)
+[2025-12-03 03:48:17] [WARNING] [__main__] [Boxscores V3] GAME_ID=0011900001 attempt 1/5 failed: HTTPSConnectionPool(host='stats.nba.com', port=443): Max retries exceeded with url: /stats/boxscoretraditionalv3?EndPeriod=0&EndRange=0&GameID=0011900001&RangeType=0&StartPeriod=0&StartRange=0 (Caused by ProxyError('Unable to connect to proxy', OSError('Tunnel connection failed: 407 Proxy Authentication Required'))) — retrying in 1.5s
+[2025-12-03 03:48:17] [INFO] [__main__] Sleeping 1.5s (retry for GAME_ID=0011900001)
+[2025-12-03 03:48:22] [WARNING] [__main__] [Boxscores V3] GAME_ID=0011900001 attempt 2/5 failed: HTTPSConnectionPool(host='stats.nba.com', port=443): Max retries exceeded with url: /stats/boxscoretraditionalv3?EndPeriod=0&EndRange=0&GameID=0011900001&RangeType=0&StartPeriod=0&StartRange=0 (Caused by ProxyError('Unable to connect to proxy', OSError('Tunnel connection failed: 407 Proxy Authentication Required'))) — retrying in 3.0s
+[2025-12-03 03:48:22] [INFO] [__main__] Sleeping 3.0s (retry for GAME_ID=0011900001)
+[2025-12-03 03:48:28] [WARNING] [__main__] [Boxscores V3] GAME_ID=0011900001 attempt 3/5 failed: HTTPSConnectionPool(host='stats.nba.com', port=443): Max retries exceeded with url: /stats/boxscoretraditionalv3?EndPeriod=0&EndRange=0&GameID=0011900001&RangeType=0&StartPeriod=0&StartRange=0 (Caused by ProxyError('Unable to connect to proxy', OSError('Tunnel connection failed: 407 Proxy Authentication Required'))) — retrying in 6.0s
+[2025-12-03 03:48:28] [INFO] [__main__] Sleeping 6.0s (retry for GAME_ID=0011900001)
+[2025-12-03 03:48:37] [WARNING] [__main__] [Boxscores V3] GAME_ID=0011900001 attempt 4/5 failed: HTTPSConnectionPool(host='stats.nba.com', port=443): Max retries exceeded with url: /stats/boxscoretraditionalv3?EndPeriod=0&EndRange=0&GameID=0011900001&RangeType=0&StartPeriod=0&StartRange=0 (Caused by ProxyError('Unable to connect to proxy', OSError('Tunnel connection failed: 407 Proxy Authentication Required'))) — retrying in 12.0s
+[2025-12-03 03:48:37] [INFO] [__main__] Sleeping 12.0s (retry for GAME_ID=0011900001)
+[2025-12-03 03:48:52] [WARNING] [__main__] [Boxscores V3] GAME_ID=0011900001 attempt 5/5 failed: HTTPSConnectionPool(host='stats.nba.com', port=443): Max retries exceeded with url: /stats/boxscoretraditionalv3?EndPeriod=0&EndRange=0&GameID=0011900001&RangeType=0&StartPeriod=0&StartRange=0 (Caused by ProxyError('Unable to connect to proxy', OSError('Tunnel connection failed: 407 Proxy Authentication Required'))) — retrying in 24.0s
+[2025-12-03 03:48:52] [INFO] [__main__] Sleeping 24.0s (retry for GAME_ID=0011900001)
+[2025-12-03 03:49:16] [ERROR] [__main__] [Boxscores V3] Exhausted 5 retries for GAME_ID=0011900001
+[2025-12-03 03:49:16] [WARNING] [__main__] [Boxscores V3] Re-queueing GAME_ID=0011900001 at end of queue (attempt cycles so far: 1)
+[2025-12-03 03:49:16] [INFO] [__main__] Sleeping 1.5s (after requeue)
+[2025-12-03 03:49:17] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900002 (cycle #1, remaining in queue=6664)
+[2025-12-03 03:49:21] [WARNING] [__main__] [Boxscores V3] GAME_ID=0011900002 attempt 1/5 failed: HTTPSConnectionPool(host='stats.nba.com', port=443): Max retries exceeded with url: /stats/boxscoretraditionalv3?EndPeriod=0&EndRange=0&GameID=0011900002&RangeType=0&StartPeriod=0&StartRange=0 (Caused by ProxyError('Unable to connect to proxy', OSError('Tunnel connection failed: 407 Proxy Authentication Required'))) — retrying in 1.5s
+[2025-12-03 03:49:21] [INFO] [__main__] Sleeping 1.5s (retry for GAME_ID=0011900002)
+[2025-12-03 03:49:25] [WARNING] [__main__] [Boxscores V3] GAME_ID=0011900002 attempt 2/5 failed: HTTPSConnectionPool(host='stats.nba.com', port=443): Max retries exceeded with url: /stats/boxscoretraditionalv3?EndPeriod=0&EndRange=0&GameID=0011900002&RangeType=0&StartPeriod=0&StartRange=0 (Caused by ProxyError('Unable to connect to proxy', OSError('Tunnel connection failed: 407 Proxy Authentication Required'))) — retrying in 3.0s
+[2025-12-03 03:49:25] [INFO] [__main__] Sleeping 3.0s (retry for GAME_ID=0011900002)
+[2025-12-03 03:49:31] [WARNING] [__main__] [Boxscores V3] GAME_ID=0011900002 attempt 3/5 failed: HTTPSConnectionPool(host='stats.nba.com', port=443): Max retries exceeded with url: /stats/boxscoretraditionalv3?EndPeriod=0&EndRange=0&GameID=0011900002&RangeType=0&StartPeriod=0&StartRange=0 (Caused by ProxyError('Unable to connect to proxy', OSError('Tunnel connection failed: 407 Proxy Authentication Required'))) — retrying in 6.0s
+[2025-12-03 03:49:31] [INFO] [__main__] Sleeping 6.0s (retry for GAME_ID=0011900002)
+[2025-12-03 03:49:40] [WARNING] [__main__] [Boxscores V3] GAME_ID=0011900002 attempt 4/5 failed: HTTPSConnectionPool(host='stats.nba.com', port=443): Max retries exceeded with url: /stats/boxscoretraditionalv3?EndPeriod=0&EndRange=0&GameID=0011900002&RangeType=0&StartPeriod=0&StartRange=0 (Caused by ProxyError('Unable to connect to proxy', OSError('Tunnel connection failed: 407 Proxy Authentication Required'))) — retrying in 12.0s
+[2025-12-03 03:49:40] [INFO] [__main__] Sleeping 12.0s (retry for GAME_ID=0011900002)
+[2025-12-03 03:49:56] [WARNING] [__main__] [Boxscores V3] GAME_ID=0011900002 attempt 5/5 failed: HTTPSConnectionPool(host='stats.nba.com', port=443): Max retries exceeded with url: /stats/boxscoretraditionalv3?EndPeriod=0&EndRange=0&GameID=0011900002&RangeType=0&StartPeriod=0&StartRange=0 (Caused by ProxyError('Unable to connect to proxy', OSError('Tunnel connection failed: 407 Proxy Authentication Required'))) — retrying in 24.0s
+[2025-12-03 03:49:56] [INFO] [__main__] Sleeping 24.0s (retry for GAME_ID=0011900002)
+[2025-12-03 03:54:36] [INFO] [__main__] Fetching schedule for season 2019-20
+[2025-12-03 03:54:36] [INFO] [__main__] Fetching schedule for season 2020-21
+[2025-12-03 03:54:36] [INFO] [__main__] Fetching schedule for season 2021-22
+[2025-12-03 03:54:36] [INFO] [__main__] Fetching schedule for season 2022-23
+[2025-12-03 03:54:36] [INFO] [__main__] Fetching schedule for season 2023-24
+[2025-12-03 03:54:37] [INFO] [__main__] Saved schedule to /Users/mohamed/Desktop/Projects/NBA_Final/data/raw/games_schedule_5_seasons.csv with 13331 rows
+[2025-12-03 03:54:37] [INFO] [__main__] Proxy enabled via gate.decodo.com:10001
+[2025-12-03 03:54:37] [INFO] [__main__] Queue initialized with 6665 unique GAME_IDs.
+[2025-12-03 03:54:37] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900001 (cycle #1, remaining in queue=6664)
+[2025-12-03 03:55:07] [WARNING] [__main__] [Boxscores V3] GAME_ID=0011900001 attempt 1/5 failed: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=30) — retrying in 1.5s
+[2025-12-03 03:55:07] [INFO] [__main__] Sleeping 1.5s (retry for GAME_ID=0011900001)
+[2025-12-03 03:55:40] [WARNING] [__main__] [Boxscores V3] GAME_ID=0011900001 attempt 2/5 failed: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=30) — retrying in 3.0s
+[2025-12-03 03:55:40] [INFO] [__main__] Sleeping 3.0s (retry for GAME_ID=0011900001)
+[2025-12-03 03:56:13] [WARNING] [__main__] [Boxscores V3] GAME_ID=0011900001 attempt 3/5 failed: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=30) — retrying in 6.0s
+[2025-12-03 03:56:13] [INFO] [__main__] Sleeping 6.0s (retry for GAME_ID=0011900001)
+[2025-12-03 03:56:50] [WARNING] [__main__] [Boxscores V3] GAME_ID=0011900001 attempt 4/5 failed: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=30) — retrying in 12.0s
+[2025-12-03 03:56:50] [INFO] [__main__] Sleeping 12.0s (retry for GAME_ID=0011900001)
+[2025-12-03 03:57:39] [INFO] [__main__] Fetching schedule for season 2019-20
+[2025-12-03 03:57:40] [INFO] [__main__] Fetching schedule for season 2020-21
+[2025-12-03 03:57:41] [INFO] [__main__] Fetching schedule for season 2021-22
+[2025-12-03 03:57:41] [INFO] [__main__] Fetching schedule for season 2022-23
+[2025-12-03 03:57:41] [INFO] [__main__] Fetching schedule for season 2023-24
+[2025-12-03 03:57:41] [INFO] [__main__] Saved schedule to /Users/mohamed/Desktop/Projects/NBA_Final/data/raw/games_schedule_5_seasons.csv with 13331 rows
+[2025-12-03 03:57:41] [INFO] [__main__] Proxy pool enabled with 7 endpoints.
+[2025-12-03 03:57:41] [INFO] [__main__] Queue initialized with 6665 unique GAME_IDs.
+[2025-12-03 03:57:41] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900001 (cycle #1, remaining in queue=6664)
+[2025-12-03 03:58:27] [WARNING] [__main__] [Boxscores V3] GAME_ID=0011900001 attempt 1/8 failed: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=45) — retrying in 2.0s
+[2025-12-03 03:58:27] [INFO] [__main__] Sleeping 2.0s (retry for GAME_ID=0011900001)
+[2025-12-03 03:59:14] [WARNING] [__main__] [Boxscores V3] GAME_ID=0011900001 attempt 2/8 failed: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=45) — retrying in 4.0s
+[2025-12-03 03:59:14] [INFO] [__main__] Sleeping 4.0s (retry for GAME_ID=0011900001)
+[2025-12-03 04:00:04] [WARNING] [__main__] [Boxscores V3] GAME_ID=0011900001 attempt 3/8 failed: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=45) — retrying in 8.0s
+[2025-12-03 04:00:04] [INFO] [__main__] Sleeping 8.0s (retry for GAME_ID=0011900001)
+[2025-12-03 04:00:56] [INFO] [__main__] Fetching schedule for season 2019-20
+[2025-12-03 04:00:56] [INFO] [__main__] Fetching schedule for season 2020-21
+[2025-12-03 04:00:56] [INFO] [__main__] Fetching schedule for season 2021-22
+[2025-12-03 04:00:56] [INFO] [__main__] Fetching schedule for season 2022-23
+[2025-12-03 04:00:56] [INFO] [__main__] Fetching schedule for season 2023-24
+[2025-12-03 04:00:56] [INFO] [__main__] Saved schedule to /Users/mohamed/Desktop/Projects/NBA_Final/data/raw/games_schedule_5_seasons.csv with 13331 rows
+[2025-12-03 04:00:56] [INFO] [__main__] Proxy pool enabled with 7 endpoints.
+[2025-12-03 04:00:56] [INFO] [__main__] Queue initialized with 6665 unique GAME_IDs.
+[2025-12-03 04:00:56] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900001 (cycle #1, remaining in queue=6664)
+[2025-12-03 04:01:42] [WARNING] [__main__] [Boxscores V3] GAME_ID=0011900001 attempt 1/8 failed: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=45) — retrying in 2.0s
+[2025-12-03 04:01:42] [INFO] [__main__] Sleeping 2.0s (retry for GAME_ID=0011900001)
+[2025-12-03 04:02:30] [WARNING] [__main__] [Boxscores V3] GAME_ID=0011900001 attempt 2/8 failed: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=45) — retrying in 4.0s
+[2025-12-03 04:02:30] [INFO] [__main__] Sleeping 4.0s (retry for GAME_ID=0011900001)
+[2025-12-03 04:03:20] [WARNING] [__main__] [Boxscores V3] GAME_ID=0011900001 attempt 3/8 failed: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=45) — retrying in 8.0s
+[2025-12-03 04:03:20] [INFO] [__main__] Sleeping 8.0s (retry for GAME_ID=0011900001)
+[2025-12-03 04:05:00] [INFO] [__main__] Fetching schedule for season 2019-20
+[2025-12-03 04:05:01] [INFO] [__main__] Fetching schedule for season 2020-21
+[2025-12-03 04:05:01] [INFO] [__main__] Fetching schedule for season 2021-22
+[2025-12-03 04:05:01] [INFO] [__main__] Fetching schedule for season 2022-23
+[2025-12-03 04:05:01] [INFO] [__main__] Fetching schedule for season 2023-24
+[2025-12-03 04:05:01] [INFO] [__main__] Saved schedule to /Users/mohamed/Desktop/Projects/NBA_Final/data/raw/games_schedule_5_seasons.csv with 13331 rows
+[2025-12-03 04:05:01] [INFO] [__main__] Proxy pool enabled with 7 endpoints.
+[2025-12-03 04:05:01] [INFO] [__main__] Queue initialized with 6665 unique GAME_IDs.
+[2025-12-03 04:05:01] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900001 (cycle #1, remaining in queue=6664)
+[2025-12-03 04:05:55] [INFO] [__main__] Proxy pool enabled with 7 endpoints.
+[2025-12-03 04:05:55] [INFO] [__main__] Queue initialized with 6665 unique GAME_IDs.
+[2025-12-03 04:05:55] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900001 (cycle #1, remaining in queue=6664)
+[2025-12-03 04:07:11] [WARNING] [__main__] [Boxscores V3] GAME_ID=0011900001 attempt 1/8 failed: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=75.0) — retrying in 3.0s
+[2025-12-03 04:07:11] [INFO] [__main__] Sleeping 3.0s (retry for GAME_ID=0011900001)
+[2025-12-03 04:08:30] [WARNING] [__main__] [Boxscores V3] GAME_ID=0011900001 attempt 2/8 failed: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=75.0) — retrying in 6.0s
+[2025-12-03 04:08:30] [INFO] [__main__] Sleeping 6.0s (retry for GAME_ID=0011900001)
+[2025-12-03 09:11:03] [INFO] [__main__] Fetching schedule for season 2019-20
+[2025-12-03 09:11:03] [INFO] [__main__] Fetching schedule for season 2020-21
+[2025-12-03 09:11:03] [INFO] [__main__] Fetching schedule for season 2021-22
+[2025-12-03 09:11:03] [INFO] [__main__] Fetching schedule for season 2022-23
+[2025-12-03 09:11:04] [INFO] [__main__] Fetching schedule for season 2023-24
+[2025-12-03 09:11:04] [INFO] [__main__] Saved schedule to /app/data/raw/games_schedule_5_seasons.csv with 13331 rows
+[2025-12-03 09:11:04] [INFO] [__main__] Proxy pool enabled with 7 endpoints.
+[2025-12-03 09:11:04] [INFO] [__main__] Queue initialized with 6665 unique GAME_IDs.
+[2025-12-03 09:11:04] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900001 (cycle #1, remaining in queue=6664)
+[2025-12-03 09:12:20] [WARNING] [__main__] [Boxscores V3] GAME_ID=0011900001 attempt 1/8 failed: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=75.0) — retrying in 3.0s
+[2025-12-03 09:12:20] [INFO] [__main__] Sleeping 3.0s (retry for GAME_ID=0011900001)
+[2025-12-03 09:13:40] [WARNING] [__main__] [Boxscores V3] GAME_ID=0011900001 attempt 2/8 failed: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=75.0) — retrying in 6.0s
+[2025-12-03 09:13:40] [INFO] [__main__] Sleeping 6.0s (retry for GAME_ID=0011900001)
+[2025-12-03 04:14:13] [INFO] [__main__] Proxy pool enabled with 7 endpoints.
+[2025-12-03 04:14:13] [INFO] [__main__] Queue initialized with 6665 unique GAME_IDs.
+[2025-12-03 04:14:13] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900001 (cycle #1, remaining in queue=6664)
+[2025-12-03 04:15:28] [WARNING] [__main__] [Boxscores V3] GAME_ID=0011900001 attempt 1/8 failed: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=75.0) — retrying in 3.0s
+[2025-12-03 04:15:28] [INFO] [__main__] Sleeping 3.0s (retry for GAME_ID=0011900001)
+[2025-12-03 04:16:48] [WARNING] [__main__] [Boxscores V3] GAME_ID=0011900001 attempt 2/8 failed: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=75.0) — retrying in 6.0s
+[2025-12-03 04:16:48] [INFO] [__main__] Sleeping 6.0s (retry for GAME_ID=0011900001)
+[2025-12-03 04:18:10] [WARNING] [__main__] [Boxscores V3] GAME_ID=0011900001 attempt 3/8 failed: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=75.0) — retrying in 12.0s
+[2025-12-03 04:18:10] [INFO] [__main__] Sleeping 12.0s (retry for GAME_ID=0011900001)
+[2025-12-03 04:19:39] [WARNING] [__main__] [Boxscores V3] GAME_ID=0011900001 attempt 4/8 failed: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=75.0) — retrying in 24.0s
+[2025-12-03 04:19:39] [INFO] [__main__] Sleeping 24.0s (retry for GAME_ID=0011900001)
+[2025-12-03 04:19:47] [INFO] [__main__] Proxy pool enabled with 7 endpoints.
+[2025-12-03 04:19:47] [INFO] [__main__] Queue initialized with 6665 unique GAME_IDs.
+[2025-12-03 04:19:47] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900001 (cycle #1, remaining in queue=6664)
+[2025-12-03 04:21:03] [WARNING] [__main__] [Boxscores V3] GAME_ID=0011900001 attempt 1/8 failed: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=75.0) — retrying in 3.0s
+[2025-12-03 04:21:03] [INFO] [__main__] Sleeping 3.0s (retry for GAME_ID=0011900001)
+[2025-12-03 04:22:21] [WARNING] [__main__] [Boxscores V3] GAME_ID=0011900001 attempt 2/8 failed: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=75.0) — retrying in 6.0s
+[2025-12-03 04:22:21] [INFO] [__main__] Sleeping 6.0s (retry for GAME_ID=0011900001)
+[2025-12-03 04:23:43] [INFO] [__main__] Proxy pool enabled with 7 endpoints.
+[2025-12-03 04:23:43] [INFO] [__main__] Queue initialized with 6665 unique GAME_IDs.
+[2025-12-03 04:23:43] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900001 (cycle #1, remaining in queue=6664)
+[2025-12-03 04:23:43] [WARNING] [__main__] [Boxscores V3] GAME_ID=0011900001 attempt 1/8 failed: BoxScoreTraditionalV3.__init__() got an unexpected keyword argument 'StartPeriod'. Did you mean 'start_period'? — retrying in 3.0s
+[2025-12-03 04:23:43] [INFO] [__main__] Sleeping 3.0s (retry for GAME_ID=0011900001)
+[2025-12-03 04:23:46] [WARNING] [__main__] [Boxscores V3] GAME_ID=0011900001 attempt 2/8 failed: BoxScoreTraditionalV3.__init__() got an unexpected keyword argument 'StartPeriod'. Did you mean 'start_period'? — retrying in 6.0s
+[2025-12-03 04:23:46] [INFO] [__main__] Sleeping 6.0s (retry for GAME_ID=0011900001)
+[2025-12-03 04:23:52] [INFO] [__main__] Sleeping 51.6s (rate limit pacing)
+[2025-12-03 04:30:32] [INFO] [__main__] Proxy pool enabled with 7 endpoints.
+[2025-12-03 04:30:32] [INFO] [__main__] Queue initialized with 6665 unique GAME_IDs.
+[2025-12-03 04:30:32] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900001 (cycle #1, remaining in queue=6664)
+[2025-12-03 04:30:32] [WARNING] [__main__] [Boxscores V3] GAME_ID=0011900001 attempt 1/8 failed: BoxScoreTraditionalV3.__init__() got an unexpected keyword argument 'StartPeriod'. Did you mean 'start_period'? — retrying in 3.0s
+[2025-12-03 04:30:32] [INFO] [__main__] Sleeping 3.0s (retry for GAME_ID=0011900001)
+[2025-12-03 04:30:35] [WARNING] [__main__] [Boxscores V3] GAME_ID=0011900001 attempt 2/8 failed: BoxScoreTraditionalV3.__init__() got an unexpected keyword argument 'StartPeriod'. Did you mean 'start_period'? — retrying in 6.0s
+[2025-12-03 04:30:35] [INFO] [__main__] Sleeping 6.0s (retry for GAME_ID=0011900001)
+[2025-12-03 04:30:41] [INFO] [__main__] Sleeping 51.6s (rate limit pacing)
+[2025-12-03 04:31:32] [WARNING] [__main__] [Boxscores V3] GAME_ID=0011900001 attempt 3/8 failed: BoxScoreTraditionalV3.__init__() got an unexpected keyword argument 'StartPeriod'. Did you mean 'start_period'? — retrying in 12.0s
+[2025-12-03 04:31:32] [INFO] [__main__] Sleeping 12.0s (retry for GAME_ID=0011900001)
+[2025-12-03 04:31:44] [WARNING] [__main__] [Boxscores V3] GAME_ID=0011900001 attempt 4/8 failed: BoxScoreTraditionalV3.__init__() got an unexpected keyword argument 'StartPeriod'. Did you mean 'start_period'? — retrying in 24.0s
+[2025-12-03 04:31:44] [INFO] [__main__] Sleeping 24.0s (retry for GAME_ID=0011900001)
+[2025-12-03 04:33:16] [INFO] [__main__] Proxy pool enabled with 7 endpoints.
+[2025-12-03 04:33:16] [INFO] [__main__] Queue initialized with 6665 unique GAME_IDs.
+[2025-12-03 04:33:16] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900001 (cycle #1, remaining in queue=6664)
+[2025-12-03 04:33:22] [INFO] [__main__] Sleeping 3.0s (between successful games)
+[2025-12-03 04:33:25] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900002 (cycle #1, remaining in queue=6663)
+[2025-12-03 04:33:25] [INFO] [__main__] Sleeping 3.0s (between successful games)
+[2025-12-03 04:33:28] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900003 (cycle #1, remaining in queue=6662)
+[2025-12-03 04:33:28] [INFO] [__main__] Sleeping 47.9s (rate limit pacing)
+[2025-12-03 04:34:28] [INFO] [__main__] Proxy pool enabled with 7 endpoints.
+[2025-12-03 04:34:28] [INFO] [__main__] Queue initialized with 6665 unique GAME_IDs.
+[2025-12-03 04:34:28] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900001 (cycle #1, remaining in queue=6664)
+[2025-12-03 04:34:34] [INFO] [__main__] Sleeping 1.2s (between successful games)
+[2025-12-03 04:34:35] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900002 (cycle #1, remaining in queue=6663)
+[2025-12-03 04:34:35] [INFO] [__main__] Sleeping 1.2s (between successful games)
+[2025-12-03 04:34:37] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900003 (cycle #1, remaining in queue=6662)
+[2025-12-03 04:34:37] [INFO] [__main__] Sleeping 1.2s (between successful games)
+[2025-12-03 04:34:38] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900004 (cycle #1, remaining in queue=6661)
+[2025-12-03 04:34:39] [INFO] [__main__] Sleeping 1.2s (between successful games)
+[2025-12-03 04:34:40] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900005 (cycle #1, remaining in queue=6660)
+[2025-12-03 04:34:42] [INFO] [__main__] Sleeping 1.2s (between successful games)
+[2025-12-03 04:34:43] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900006 (cycle #1, remaining in queue=6659)
+[2025-12-03 04:34:44] [INFO] [__main__] Sleeping 1.2s (between successful games)
+[2025-12-03 04:34:45] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900007 (cycle #1, remaining in queue=6658)
+[2025-12-03 04:34:45] [INFO] [__main__] Sleeping 43.4s (rate limit pacing)
+[2025-12-03 04:35:29] [INFO] [__main__] Sleeping 1.2s (between successful games)
+[2025-12-03 04:35:30] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900008 (cycle #1, remaining in queue=6657)
+[2025-12-03 04:35:30] [INFO] [__main__] Sleeping 5.3s (rate limit pacing)
+[2025-12-03 04:35:36] [INFO] [__main__] Sleeping 1.2s (between successful games)
+[2025-12-03 04:35:38] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900009 (cycle #1, remaining in queue=6656)
+[2025-12-03 04:35:38] [INFO] [__main__] Sleeping 1.2s (between successful games)
+[2025-12-03 04:35:39] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900010 (cycle #1, remaining in queue=6655)
+[2025-12-03 04:35:40] [INFO] [__main__] Sleeping 1.2s (between successful games)
+[2025-12-03 04:35:41] [INFO] [__main__] [Boxscores V3] 10 successful games — partial saved to /Users/mohamed/Desktop/Projects/NBA_Final/data/raw/boxscores_partial_v3.csv
+[2025-12-03 04:35:41] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900011 (cycle #1, remaining in queue=6654)
+[2025-12-03 04:35:43] [INFO] [__main__] Sleeping 1.2s (between successful games)
+[2025-12-03 04:35:44] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900012 (cycle #1, remaining in queue=6653)
+[2025-12-03 04:35:44] [INFO] [__main__] Sleeping 1.2s (between successful games)
+[2025-12-03 04:35:46] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900013 (cycle #1, remaining in queue=6652)
+[2025-12-03 04:35:46] [INFO] [__main__] Sleeping 43.5s (rate limit pacing)
+[2025-12-03 04:36:30] [INFO] [__main__] Sleeping 1.2s (between successful games)
+[2025-12-03 04:36:31] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900014 (cycle #1, remaining in queue=6651)
+[2025-12-03 04:36:31] [INFO] [__main__] Sleeping 4.7s (rate limit pacing)
+[2025-12-03 04:38:39] [INFO] [__main__] Proxy pool enabled with 7 endpoints.
+[2025-12-03 04:38:39] [INFO] [__main__] Queue initialized with 6665 unique GAME_IDs.
+[2025-12-03 04:38:39] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900001 (cycle #1, remaining in queue=6664)
+[2025-12-03 04:38:40] [INFO] [__main__] Sleeping 0.8s (between successful games)
+[2025-12-03 04:38:41] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900002 (cycle #1, remaining in queue=6663)
+[2025-12-03 04:38:42] [INFO] [__main__] Sleeping 0.8s (between successful games)
+[2025-12-03 04:38:43] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900003 (cycle #1, remaining in queue=6662)
+[2025-12-03 04:38:43] [INFO] [__main__] Sleeping 0.8s (between successful games)
+[2025-12-03 04:38:44] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900004 (cycle #1, remaining in queue=6661)
+[2025-12-03 04:38:45] [INFO] [__main__] Sleeping 0.8s (between successful games)
+[2025-12-03 04:38:45] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900005 (cycle #1, remaining in queue=6660)
+[2025-12-03 04:38:46] [INFO] [__main__] Sleeping 0.8s (between successful games)
+[2025-12-03 04:38:47] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900006 (cycle #1, remaining in queue=6659)
+[2025-12-03 04:38:47] [INFO] [__main__] Sleeping 0.8s (between successful games)
+[2025-12-03 04:38:48] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900007 (cycle #1, remaining in queue=6658)
+[2025-12-03 04:38:49] [INFO] [__main__] Sleeping 0.8s (between successful games)
+[2025-12-03 04:38:50] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900008 (cycle #1, remaining in queue=6657)
+[2025-12-03 04:38:50] [INFO] [__main__] Sleeping 0.8s (between successful games)
+[2025-12-03 04:38:51] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900009 (cycle #1, remaining in queue=6656)
+[2025-12-03 04:38:52] [INFO] [__main__] Sleeping 0.8s (between successful games)
+[2025-12-03 04:38:52] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900010 (cycle #1, remaining in queue=6655)
+[2025-12-03 04:38:53] [INFO] [__main__] Sleeping 0.8s (between successful games)
+[2025-12-03 04:38:54] [INFO] [__main__] [Boxscores V3] 10 successful games — partial saved to /Users/mohamed/Desktop/Projects/NBA_Final/data/raw/boxscores_partial_v3.csv
+[2025-12-03 04:38:54] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900011 (cycle #1, remaining in queue=6654)
+[2025-12-03 04:38:54] [INFO] [__main__] Sleeping 45.3s (rate limit pacing)
+[2025-12-03 04:39:40] [INFO] [__main__] Sleeping 0.8s (between successful games)
+[2025-12-03 04:39:40] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900012 (cycle #1, remaining in queue=6653)
+[2025-12-03 04:39:40] [INFO] [__main__] Sleeping 1.2s (rate limit pacing)
+[2025-12-03 04:39:42] [INFO] [__main__] Sleeping 0.8s (between successful games)
+[2025-12-03 04:39:43] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900013 (cycle #1, remaining in queue=6652)
+[2025-12-03 04:39:43] [INFO] [__main__] Sleeping 0.8s (between successful games)
+[2025-12-03 04:39:44] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900014 (cycle #1, remaining in queue=6651)
+[2025-12-03 04:39:45] [INFO] [__main__] Sleeping 0.8s (between successful games)
+[2025-12-03 04:39:46] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900015 (cycle #1, remaining in queue=6650)
+[2025-12-03 04:39:47] [INFO] [__main__] Sleeping 0.8s (between successful games)
+[2025-12-03 04:39:47] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900016 (cycle #1, remaining in queue=6649)
+[2025-12-03 04:39:48] [INFO] [__main__] Sleeping 0.8s (between successful games)
+[2025-12-03 04:39:49] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900017 (cycle #1, remaining in queue=6648)
+[2025-12-03 04:39:50] [INFO] [__main__] Sleeping 0.8s (between successful games)
+[2025-12-03 04:39:51] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900018 (cycle #1, remaining in queue=6647)
+[2025-12-03 04:39:51] [INFO] [__main__] Sleeping 0.8s (between successful games)
+[2025-12-03 04:39:52] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900019 (cycle #1, remaining in queue=6646)
+[2025-12-03 04:39:53] [INFO] [__main__] Sleeping 0.8s (between successful games)
+[2025-12-03 04:39:54] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900020 (cycle #1, remaining in queue=6645)
+[2025-12-03 04:39:54] [INFO] [__main__] Sleeping 0.8s (between successful games)
+[2025-12-03 04:39:55] [INFO] [__main__] [Boxscores V3] 20 successful games — partial saved to /Users/mohamed/Desktop/Projects/NBA_Final/data/raw/boxscores_partial_v3.csv
+[2025-12-03 04:39:55] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900021 (cycle #1, remaining in queue=6644)
+[2025-12-03 04:39:55] [INFO] [__main__] Sleeping 44.2s (rate limit pacing)
+[2025-12-03 04:40:40] [INFO] [__main__] Sleeping 0.8s (between successful games)
+[2025-12-03 04:40:41] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900022 (cycle #1, remaining in queue=6643)
+[2025-12-03 04:40:41] [INFO] [__main__] Sleeping 0.8s (rate limit pacing)
+[2025-12-03 04:40:43] [INFO] [__main__] Sleeping 0.8s (between successful games)
+[2025-12-03 04:40:43] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900023 (cycle #1, remaining in queue=6642)
+[2025-12-03 04:40:44] [INFO] [__main__] Sleeping 0.8s (between successful games)
+[2025-12-03 04:40:45] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900024 (cycle #1, remaining in queue=6641)
+[2025-12-03 04:40:46] [INFO] [__main__] Sleeping 0.8s (between successful games)
+[2025-12-03 04:40:46] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900025 (cycle #1, remaining in queue=6640)
+[2025-12-03 04:40:47] [INFO] [__main__] Sleeping 0.8s (between successful games)
+[2025-12-03 04:40:48] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900026 (cycle #1, remaining in queue=6639)
+[2025-12-03 04:40:49] [INFO] [__main__] Sleeping 0.8s (between successful games)
+[2025-12-03 04:40:49] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900027 (cycle #1, remaining in queue=6638)
+[2025-12-03 04:40:50] [INFO] [__main__] Sleeping 0.8s (between successful games)
+[2025-12-03 04:40:51] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900028 (cycle #1, remaining in queue=6637)
+[2025-12-03 04:40:52] [INFO] [__main__] Sleeping 0.8s (between successful games)
+[2025-12-03 04:40:53] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900029 (cycle #1, remaining in queue=6636)
+[2025-12-03 04:40:53] [INFO] [__main__] Sleeping 0.8s (between successful games)
+[2025-12-03 04:40:54] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900030 (cycle #1, remaining in queue=6635)
+[2025-12-03 04:40:55] [INFO] [__main__] Sleeping 0.8s (between successful games)
+[2025-12-03 04:40:56] [INFO] [__main__] [Boxscores V3] 30 successful games — partial saved to /Users/mohamed/Desktop/Projects/NBA_Final/data/raw/boxscores_partial_v3.csv
+[2025-12-03 04:40:56] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900031 (cycle #1, remaining in queue=6634)
+[2025-12-03 04:40:56] [INFO] [__main__] Sleeping 44.5s (rate limit pacing)
+[2025-12-03 04:41:44] [INFO] [__main__] Sleeping 0.8s (between successful games)
+[2025-12-03 04:41:44] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900032 (cycle #1, remaining in queue=6633)
+[2025-12-03 04:41:45] [INFO] [__main__] Sleeping 0.8s (between successful games)
+[2025-12-03 04:41:46] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900033 (cycle #1, remaining in queue=6632)
+[2025-12-03 04:41:47] [INFO] [__main__] Sleeping 0.8s (between successful games)
+[2025-12-03 04:41:48] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900034 (cycle #1, remaining in queue=6631)
+[2025-12-03 04:41:48] [INFO] [__main__] Sleeping 0.8s (between successful games)
+[2025-12-03 04:41:49] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900035 (cycle #1, remaining in queue=6630)
+[2025-12-03 04:41:50] [INFO] [__main__] Sleeping 0.8s (between successful games)
+[2025-12-03 04:41:51] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900036 (cycle #1, remaining in queue=6629)
+[2025-12-03 04:41:52] [INFO] [__main__] Sleeping 0.8s (between successful games)
+[2025-12-03 04:41:52] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900037 (cycle #1, remaining in queue=6628)
+[2025-12-03 04:41:53] [INFO] [__main__] Sleeping 0.8s (between successful games)
+[2025-12-03 04:41:54] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900038 (cycle #1, remaining in queue=6627)
+[2025-12-03 04:41:55] [INFO] [__main__] Sleeping 0.8s (between successful games)
+[2025-12-03 04:41:56] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900039 (cycle #1, remaining in queue=6626)
+[2025-12-03 04:41:56] [INFO] [__main__] Sleeping 0.8s (between successful games)
+[2025-12-03 04:41:57] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900040 (cycle #1, remaining in queue=6625)
+[2025-12-03 04:41:58] [INFO] [__main__] Sleeping 0.8s (between successful games)
+[2025-12-03 04:41:59] [INFO] [__main__] [Boxscores V3] 40 successful games — partial saved to /Users/mohamed/Desktop/Projects/NBA_Final/data/raw/boxscores_partial_v3.csv
+[2025-12-03 04:41:59] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900041 (cycle #1, remaining in queue=6624)
+[2025-12-03 04:41:59] [INFO] [__main__] Sleeping 42.3s (rate limit pacing)
+[2025-12-03 04:44:00] [INFO] [__main__] Proxy pool enabled with 7 endpoints.
+[2025-12-03 04:44:00] [INFO] [__main__] Queue initialized with 6665 unique GAME_IDs.
+[2025-12-03 04:44:00] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0011900001 (cycle #1, remaining in queue=6664)
+[2025-12-03 04:44:02] [WARNING] [__main__] [Boxscores V3] GAME_ID=0011900001 attempt 1/8 failed: team_stats missing GAME_ID column — retrying in 0.8s
+[2025-12-03 04:44:02] [INFO] [__main__] Sleeping 0.8s (retry for GAME_ID=0011900001)
+[2025-12-03 04:44:03] [WARNING] [__main__] [Boxscores V3] GAME_ID=0011900001 attempt 2/8 failed: team_stats missing GAME_ID column — retrying in 1.6s
+[2025-12-03 04:44:03] [INFO] [__main__] Sleeping 1.6s (retry for GAME_ID=0011900001)
+[2025-12-03 04:44:06] [WARNING] [__main__] [Boxscores V3] GAME_ID=0011900001 attempt 3/8 failed: team_stats missing GAME_ID column — retrying in 3.2s
+[2025-12-03 04:44:06] [INFO] [__main__] Sleeping 3.2s (retry for GAME_ID=0011900001)
+[2025-12-03 04:44:11] [WARNING] [__main__] [Boxscores V3] GAME_ID=0011900001 attempt 4/8 failed: team_stats missing GAME_ID column — retrying in 6.4s
+[2025-12-03 04:44:11] [INFO] [__main__] Sleeping 6.4s (retry for GAME_ID=0011900001)
+[2025-12-03 04:44:18] [WARNING] [__main__] [Boxscores V3] GAME_ID=0011900001 attempt 5/8 failed: team_stats missing GAME_ID column — retrying in 12.8s
+[2025-12-03 04:44:18] [INFO] [__main__] Sleeping 12.8s (retry for GAME_ID=0011900001)
+[2025-12-03 04:44:32] [WARNING] [__main__] [Boxscores V3] GAME_ID=0011900001 attempt 6/8 failed: team_stats missing GAME_ID column — retrying in 25.6s
+[2025-12-03 04:44:32] [INFO] [__main__] Sleeping 25.6s (retry for GAME_ID=0011900001)
+[2025-12-03 04:45:00] [WARNING] [__main__] [Boxscores V3] GAME_ID=0011900001 attempt 7/8 failed: team_stats missing GAME_ID column — retrying in 51.2s
+[2025-12-03 04:45:00] [INFO] [__main__] Sleeping 51.2s (retry for GAME_ID=0011900001)
+[2025-12-03 04:46:07] [INFO] [__main__] Proxy pool enabled with 7 endpoints.
+[2025-12-03 04:46:07] [INFO] [__main__] Filtered out 2516 games not in seasons ['2020-21', '2021-22', '2022-23', '2023-24', '2024-25', '2025-26']
+[2025-12-03 04:46:07] [INFO] [__main__] Queue initialized with 5407 unique GAME_IDs.
+[2025-12-03 04:46:07] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0012000001 (cycle #1, remaining in queue=5406)
+[2025-12-03 04:46:09] [WARNING] [__main__] [Boxscores V3] GAME_ID=0012000001 attempt 1/8 failed: team_stats missing GAME_ID column — retrying in 0.8s
+[2025-12-03 04:46:09] [INFO] [__main__] Sleeping 0.8s (retry for GAME_ID=0012000001)
+[2025-12-03 04:46:11] [WARNING] [__main__] [Boxscores V3] GAME_ID=0012000001 attempt 2/8 failed: team_stats missing GAME_ID column — retrying in 1.6s
+[2025-12-03 04:46:11] [INFO] [__main__] Sleeping 1.6s (retry for GAME_ID=0012000001)
+[2025-12-03 04:46:13] [WARNING] [__main__] [Boxscores V3] GAME_ID=0012000001 attempt 3/8 failed: team_stats missing GAME_ID column — retrying in 3.2s
+[2025-12-03 04:46:13] [INFO] [__main__] Sleeping 3.2s (retry for GAME_ID=0012000001)
+[2025-12-03 04:46:18] [WARNING] [__main__] [Boxscores V3] GAME_ID=0012000001 attempt 4/8 failed: team_stats missing GAME_ID column — retrying in 6.4s
+[2025-12-03 04:46:18] [INFO] [__main__] Sleeping 6.4s (retry for GAME_ID=0012000001)
+[2025-12-03 04:48:33] [INFO] [__main__] Proxy pool enabled with 7 endpoints.
+[2025-12-03 04:48:33] [INFO] [__main__] Filtered out 2516 games not in seasons ['2020-21', '2021-22', '2022-23', '2023-24', '2024-25', '2025-26']
+[2025-12-03 04:48:33] [INFO] [__main__] Queue initialized with 5407 unique GAME_IDs.
+[2025-12-03 04:48:33] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0012000001 (cycle #1, remaining in queue=5406)
+[2025-12-03 04:48:34] [WARNING] [__main__] [Boxscores V3] GAME_ID=0012000001 attempt 1/8 failed: team_stats missing GAME_ID column — retrying in 0.8s
+[2025-12-03 04:48:34] [INFO] [__main__] Sleeping 0.8s (retry for GAME_ID=0012000001)
+[2025-12-03 04:48:37] [WARNING] [__main__] [Boxscores V3] GAME_ID=0012000001 attempt 2/8 failed: team_stats missing GAME_ID column — retrying in 1.6s
+[2025-12-03 04:48:37] [INFO] [__main__] Sleeping 1.6s (retry for GAME_ID=0012000001)
+[2025-12-03 04:48:40] [WARNING] [__main__] [Boxscores V3] GAME_ID=0012000001 attempt 3/8 failed: team_stats missing GAME_ID column — retrying in 3.2s
+[2025-12-03 04:48:40] [INFO] [__main__] Sleeping 3.2s (retry for GAME_ID=0012000001)
+[2025-12-03 04:48:44] [WARNING] [__main__] [Boxscores V3] GAME_ID=0012000001 attempt 4/8 failed: team_stats missing GAME_ID column — retrying in 6.4s
+[2025-12-03 04:48:44] [INFO] [__main__] Sleeping 6.4s (retry for GAME_ID=0012000001)
+[2025-12-03 04:48:52] [WARNING] [__main__] [Boxscores V3] GAME_ID=0012000001 attempt 5/8 failed: team_stats missing GAME_ID column — retrying in 12.8s
+[2025-12-03 04:48:52] [INFO] [__main__] Sleeping 12.8s (retry for GAME_ID=0012000001)
+[2025-12-03 04:49:06] [WARNING] [__main__] [Boxscores V3] GAME_ID=0012000001 attempt 6/8 failed: team_stats missing GAME_ID column — retrying in 25.6s
+[2025-12-03 04:49:06] [INFO] [__main__] Sleeping 25.6s (retry for GAME_ID=0012000001)
+[2025-12-03 04:51:21] [INFO] [__main__] Proxy pool enabled with 7 endpoints.
+[2025-12-03 04:51:21] [INFO] [__main__] Filtered out 2516 games not in seasons ['2020-21', '2021-22', '2022-23', '2023-24', '2024-25', '2025-26']
+[2025-12-03 04:51:21] [INFO] [__main__] Dropped 1275 GAME_IDs failing prefix/length validation; expected prefixes per season: {'2020-21': '00220', '2022-23': '00222', '2023-24': '00223', '2021-22': '00221', '2024-25': '00224', '2025-26': '00225'}
+[2025-12-03 04:51:21] [INFO] [__main__] Queue initialized with 4770 unique GAME_IDs.
+[2025-12-03 04:51:21] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0022000001 (cycle #1, remaining in queue=4769)
+[2025-12-03 04:51:23] [WARNING] [__main__] [Boxscores V3] GAME_ID=0022000001 attempt 1/8 failed: team_stats missing GAME_ID column — retrying in 0.8s
+[2025-12-03 04:51:23] [INFO] [__main__] Sleeping 0.8s (retry for GAME_ID=0022000001)
+[2025-12-03 04:51:25] [WARNING] [__main__] [Boxscores V3] GAME_ID=0022000001 attempt 2/8 failed: team_stats missing GAME_ID column — retrying in 1.6s
+[2025-12-03 04:51:25] [INFO] [__main__] Sleeping 1.6s (retry for GAME_ID=0022000001)
+[2025-12-03 04:51:28] [WARNING] [__main__] [Boxscores V3] GAME_ID=0022000001 attempt 3/8 failed: team_stats missing GAME_ID column — retrying in 3.2s
+[2025-12-03 04:51:28] [INFO] [__main__] Sleeping 3.2s (retry for GAME_ID=0022000001)
+[2025-12-03 04:51:32] [WARNING] [__main__] [Boxscores V3] GAME_ID=0022000001 attempt 4/8 failed: team_stats missing GAME_ID column — retrying in 6.4s
+[2025-12-03 04:51:32] [INFO] [__main__] Sleeping 6.4s (retry for GAME_ID=0022000001)
+[2025-12-03 04:52:45] [INFO] [__main__] Proxy pool enabled with 7 endpoints.
+[2025-12-03 04:52:45] [INFO] [__main__] Filtered out 2516 games not in seasons ['2020-21', '2021-22', '2022-23', '2023-24', '2024-25', '2025-26']
+[2025-12-03 04:52:45] [INFO] [__main__] Dropped 1275 GAME_IDs failing prefix/length validation; expected prefixes per season: {'2020-21': '00220', '2021-22': '00221', '2024-25': '00224', '2022-23': '00222', '2025-26': '00225', '2023-24': '00223'}
+[2025-12-03 04:52:45] [INFO] [__main__] Queue initialized with 4770 unique GAME_IDs.
+[2025-12-03 04:52:45] [INFO] [__main__] [Boxscores V3] Dequeued GAME_ID=0022000001 (cycle #1, remaining in queue=4769)
+[2025-12-03 04:52:46] [WARNING] [__main__] [Boxscores V3] GAME_ID=0022000001 attempt 1/8 failed: team_stats missing GAME_ID column — retrying in 0.8s
+[2025-12-03 04:52:46] [INFO] [__main__] Sleeping 0.8s (retry for GAME_ID=0022000001)
+[2025-12-03 04:52:48] [WARNING] [__main__] [Boxscores V3] GAME_ID=0022000001 attempt 2/8 failed: team_stats missing GAME_ID column — retrying in 1.6s
+[2025-12-03 04:52:48] [INFO] [__main__] Sleeping 1.6s (retry for GAME_ID=0022000001)

@@ -5,209 +5,307 @@ from ..utils import paths
 
 logger = setup_logging(__name__)
 
-ROLLING_WINDOWS = (3, 5, 10)
-ROLLING_COLS = [
-    "PTS",
-    "REB",
-    "AST",
-    "STL",
-    "BLK",
-    "TO",
-    "PF",
-    "PLUS_MINUS",
-    "OREB",
-    "DREB",
-    "FGM",
-    "FGA",
-    "FG3M",
-    "FG3A",
-    "FTM",
-    "FTA",
-]
-SEASON_AVG_COLS = ["PTS", "REB", "AST", "EFG", "TS"]
 
-def detect_side_from_matchup(matchup: str) -> str:
-    if isinstance(matchup, str):
-        if "vs." in matchup:
-            return "HOME"
-        if "@" in matchup:
-            return "AWAY"
-    return "UNKNOWN"
+def build_dataset():
+    # 1. Load schedule and boxscores
+    if not paths.SCHEDULE_CSV.exists():
+        logger.error(f"Schedule CSV not found at {paths.SCHEDULE_CSV}")
+        return
 
-def add_efficiency_features(df: pd.DataFrame) -> pd.DataFrame:
-    denom_efg = df["FGA"].replace(0, pd.NA)
-    denom_ts = (df["FGA"] + 0.44 * df["FTA"]).replace(0, pd.NA)
-    df["EFG"] = ((df["FGM"] + 0.5 * df["FG3M"]) / denom_efg).fillna(0)
-    df["TS"] = (df["PTS"] / (2 * denom_ts)).fillna(0)
-    return df
-
-def add_rest_features(df: pd.DataFrame) -> pd.DataFrame:
-    df = df.sort_values(["TEAM_ID", "GAME_DATE"])
-    df["REST_DAYS"] = (
-        df.groupby("TEAM_ID")["GAME_DATE"].diff().dt.days.fillna(99)
-    )
-    df["IS_BACK_TO_BACK"] = (df["REST_DAYS"] <= 1).astype(int)
-    return df
-
-def compute_streaks(results: pd.Series) -> pd.Series:
-    streaks = []
-    current = 0
-    prev = None
-    for res in results:
-        streaks.append(current)
-        if res == "W":
-            current = current + 1 if prev == "W" else 1
-            prev = "W"
-        elif res == "L":
-            current = current - 1 if prev == "L" else -1
-            prev = "L"
-        else:
-            current = 0
-            prev = None
-    return pd.Series(streaks, index=results.index)
-
-def add_streak_feature(df: pd.DataFrame) -> pd.DataFrame:
-    if "WL" not in df.columns:
-        df["STREAK"] = 0
-        logger.warning("WL column missing; streak set to 0.")
-        return df
-    df = df.sort_values(["TEAM_ID", "GAME_DATE"])
-    df["STREAK"] = (
-        df.groupby("TEAM_ID")["WL"]
-        .apply(compute_streaks)
-        .reset_index(level=0, drop=True)
-    )
-    return df
-
-def add_rolling_features(df: pd.DataFrame) -> pd.DataFrame:
-    df = df.sort_values(["TEAM_ID", "GAME_DATE"])
-    for col in ROLLING_COLS:
-        if col not in df.columns:
-            logger.warning(f"Column {col} missing; skipping rolling calcs.")
-            continue
-        for window in ROLLING_WINDOWS:
-            df[f"{col}_roll{window}"] = (
-                df.groupby("TEAM_ID")[col]
-                .apply(lambda s: s.shift(1).rolling(window, min_periods=1).mean())
-                .reset_index(level=0, drop=True)
-            )
-    return df
-
-def add_season_averages(df: pd.DataFrame) -> pd.DataFrame:
-    df = df.sort_values(["TEAM_ID", "SEASON", "GAME_DATE"])
-    for col in SEASON_AVG_COLS:
-        if col not in df.columns:
-            logger.warning(f"Column {col} missing; skipping season averages.")
-            continue
-        df[f"{col}_season_avg"] = (
-            df.groupby(["TEAM_ID", "SEASON"])[col]
-            .apply(lambda s: s.shift(1).expanding().mean())
-            .reset_index(level=[0, 1], drop=True)
-        )
-    return df
-
-def main():
-    if not paths.SCHEDULE_CSV.exists() or not paths.BOXSCORES_CSV.exists():
-        logger.error("Missing raw CSVs; run fetch_schedule and fetch_boxscores first.")
+    if not paths.BOXSCORES_CSV.exists():
+        logger.error(f"Boxscores CSV not found at {paths.BOXSCORES_CSV}")
+        return
+    if not paths.BOXSCORES_PLAYERS_CSV.exists():
+        logger.error(f"Player boxscores CSV not found at {paths.BOXSCORES_PLAYERS_CSV}")
         return
 
     sched = pd.read_csv(paths.SCHEDULE_CSV, dtype={"GAME_ID": str})
-    box = pd.read_csv(paths.BOXSCORES_CSV, dtype={"GAME_ID": str})
-
-    if "GAME_ID" not in sched.columns or "TEAM_ID" not in sched.columns:
-        logger.error("Schedule CSV must have GAME_ID and TEAM_ID.")
-        return
-
-    logger.info("Merging schedule and V3 boxscores on GAME_ID + TEAM_ID...")
-    team_games = sched.merge(
-        box,
-        on=["GAME_ID", "TEAM_ID"],
-        how="inner",
-        suffixes("", "_BOX"),
+    box = pd.read_csv(paths.BOXSCORES_CSV, dtype={"GAME_ID": str, "TEAM_ID": str})
+    players = pd.read_csv(
+        paths.BOXSCORES_PLAYERS_CSV,
+        dtype={
+            "GAME_ID": str,
+            "TEAM_ID": str,
+            "PLAYER_ID": str,
+            "PLAYER_NAME": str,
+            "START_POSITION": str,
+            "COMMENT": str,
+        },
     )
 
-    if "GAME_DATE" in team_games.columns:
-        team_games["GAME_DATE"] = pd.to_datetime(team_games["GAME_DATE"])
-    else:
-        logger.error("GAME_DATE not found in schedule.")
+    required_sched_cols = {"GAME_ID", "HOME_TEAM_ID", "AWAY_TEAM_ID"}
+    if not required_sched_cols.issubset(sched.columns):
+        logger.error(
+            f"Schedule CSV missing required columns: {required_sched_cols - set(sched.columns)}"
+        )
         return
 
-    if "SEASON" in team_games.columns:
-        team_games["SEASON"] = team_games["SEASON"].astype(str)
-    elif "SEASON_LABEL" in team_games.columns:
-        team_games["SEASON"] = team_games["SEASON_LABEL"].astype(str)
-    else:
-        logger.error("No SEASON column found; expected SEASON or SEASON_LABEL.")
+    required_box_cols = {"GAME_ID", "TEAM_ID", "PTS", "REB", "AST", "STL", "BLK", "TO", "PF"}
+    missing_box = required_box_cols - set(box.columns)
+    if missing_box:
+        logger.error(f"Boxscores CSV missing required columns: {missing_box}")
+        return
+    required_player_cols = {"GAME_ID", "TEAM_ID", "PLAYER_ID", "PLAYER_NAME", "PTS", "REB", "AST", "STL", "BLK", "TO", "PF", "MIN"}
+    missing_player = required_player_cols - set(players.columns)
+    if missing_player:
+        logger.error(f"Player boxscores CSV missing required columns: {missing_player}")
         return
 
-    if "MATCHUP" not in team_games.columns:
-        logger.error("MATCHUP column missing; cannot determine HOME/AWAY.")
-        return
+    logger.info(f"Loaded schedule: {len(sched)} rows, boxscores: {len(box)} rows")
 
-    team_games["SIDE"] = team_games["MATCHUP"].apply(detect_side_from_matchup)
-    team_games = team_games[team_games["SIDE"].isin(["HOME", "AWAY"])]
-
-    team_games = add_efficiency_features(team_games)
-    team_games = add_rest_features(team_games)
-    team_games = add_streak_feature(team_games)
-    team_games = add_rolling_features(team_games)
-    team_games = add_season_averages(team_games)
-
-    logger.info("Pivoting to game-level with HOME_*/AWAY_* features...")
-    home = team_games[team_games["SIDE"] == "HOME"].copy()
-    away = team_games[team_games["SIDE"] == "AWAY"].copy()
-
-    home = home.add_prefix("HOME_")
-    away = away.add_prefix("AWAY_")
-
-    dataset = home.merge(
-        away,
-        left_on="HOME_GAME_ID",
-        right_on="AWAY_GAME_ID",
+    # 2. Mark home vs away per team row
+    merged = box.merge(
+        sched[["GAME_ID", "HOME_TEAM_ID", "AWAY_TEAM_ID"]],
+        on="GAME_ID",
         how="inner",
-        suffixes("", "_AWAY"),
+        validate="many_to_one",
     )
 
-    dataset["GAME_ID"] = dataset["HOME_GAME_ID"]
-    dataset["GAME_DATE"] = dataset["HOME_GAME_DATE"]
-    dataset["SEASON"] = dataset["HOME_SEASON"]
-    dataset["HOME_HOME_COURT"] = 1
-    dataset["AWAY_HOME_COURT"] = 0
+    merged["IS_HOME"] = merged["TEAM_ID"] == merged["HOME_TEAM_ID"].astype(str)
+    merged["IS_AWAY"] = merged["TEAM_ID"] == merged["AWAY_TEAM_ID"].astype(str)
 
-    if "HOME_WL" in dataset.columns:
-        dataset["home_team_won"] = (dataset["HOME_WL"] == "W").astype(int)
-    else:
-        logger.error("HOME_WL column not found after pivot; cannot create target.")
-        return
+    # Filter only rows that match either home or away team
+    merged = merged[merged["IS_HOME"] | merged["IS_AWAY"]].copy()
 
-    if "HOME_PTS" in dataset.columns and "AWAY_PTS" in dataset.columns:
-        dataset["score_margin"] = dataset["HOME_PTS"] - dataset["AWAY_PTS"]
+    logger.info(f"After aligning with HOME/AWAY teams: {len(merged)} rows")
 
-    if "HOME_REST_DAYS" in dataset.columns and "AWAY_REST_DAYS" in dataset.columns:
-        dataset["rest_diff"] = dataset["HOME_REST_DAYS"] - dataset["AWAY_REST_DAYS"]
+    # 3. Split into home and away frames
+    home = merged[merged["IS_HOME"]].copy()
+    away = merged[merged["IS_AWAY"]].copy()
 
-    if "HOME_STREAK" in dataset.columns and "AWAY_STREAK" in dataset.columns:
-        dataset["streak_diff"] = dataset["HOME_STREAK"] - dataset["AWAY_STREAK"]
+    # Sanity: there should be exactly one home and one away row per GAME_ID
+    dup_home = home["GAME_ID"].value_counts().gt(1).sum()
+    dup_away = away["GAME_ID"].value_counts().gt(1).sum()
+    if dup_home or dup_away:
+        logger.warning(
+            f"Found {dup_home} games with >1 home row and {dup_away} games with >1 away row"
+        )
 
-    if "HOME_EFG" in dataset.columns and "AWAY_EFG" in dataset.columns:
-        dataset["efg_diff"] = dataset["HOME_EFG"] - dataset["AWAY_EFG"]
-    if "HOME_TS" in dataset.columns and "AWAY_TS" in dataset.columns:
-        dataset["ts_diff"] = dataset["HOME_TS"] - dataset["AWAY_TS"]
+    # Keep only the columns we need from each side
+    stat_cols = ["PTS", "REB", "AST", "STL", "BLK", "TO", "PF"]
+    home = home[["GAME_ID"] + stat_cols].rename(
+        columns={c: f"HOME_{c}" for c in stat_cols}
+    )
+    away = away[["GAME_ID"] + stat_cols].rename(
+        columns={c: f"AWAY_{c}" for c in stat_cols}
+    )
 
-    # Opponent stat differentials using recent form (5-game rolling if present)
-    if "HOME_PTS_roll5" in dataset.columns and "AWAY_PTS_roll5" in dataset.columns:
-        dataset["pts_roll5_diff"] = dataset["HOME_PTS_roll5"] - dataset["AWAY_PTS_roll5"]
-    if "HOME_REB_roll5" in dataset.columns and "AWAY_REB_roll5" in dataset.columns:
-        dataset["reb_roll5_diff"] = dataset["HOME_REB_roll5"] - dataset["AWAY_REB_roll5"]
-    if "HOME_AST_roll5" in dataset.columns and "AWAY_AST_roll5" in dataset.columns:
-        dataset["ast_roll5_diff"] = dataset["HOME_AST_roll5"] - dataset["AWAY_AST_roll5"]
+    # 4. Merge home and away into a single game-level row
+    games = (
+        home.merge(away, on="GAME_ID", how="inner", validate="one_to_one")
+        .merge(
+            sched[
+                [
+                    "GAME_ID",
+                    "GAME_DATE",
+                    "SEASON" if "SEASON" in sched.columns else "SEASON_ID",
+                    "HOME_TEAM_ID",
+                    "AWAY_TEAM_ID",
+                ]
+            ],
+            on="GAME_ID",
+            how="left",
+        )
+        .drop_duplicates(subset=["GAME_ID"])
+    )
 
-    # Save
-    paths.DATASET_CSV.parent.mkdir(parents=True, exist_ok=True)
-    dataset.to_csv(paths.DATASET_CSV, index=False)
+    # 5. Compute target: home margin (home points - away points)
+    games["HOME_MARGIN"] = games["HOME_PTS"] - games["AWAY_PTS"]
+
+    # Also provide a binary label if you ever want it
+    games["HOME_TEAM_WON"] = (games["HOME_MARGIN"] > 0).astype(int)
+
+    # 6. Advanced team-level metrics per game
+    def _safe_div(n, d):
+        return n / d if d not in (0, None) else 0
+
+    def _poss(h_fga, h_fta, h_fgm, h_oreb, h_to, a_fga, a_fta, a_fgm, a_oreb, a_to, a_dreb, h_dreb):
+        # Standard estimate of possessions combining both teams to reduce noise
+        h_part = h_fga + 0.4 * h_fta - 1.07 * _safe_div(h_oreb, h_oreb + a_dreb) * (h_fga - h_fgm) + h_to
+        a_part = a_fga + 0.4 * a_fta - 1.07 * _safe_div(a_oreb, a_oreb + h_dreb) * (a_fga - a_fgm) + a_to
+        return 0.5 * (h_part + a_part)
+
+    # Compute possessions per game
+    games["HOME_POSSESSIONS"] = games.apply(
+        lambda r: _poss(
+            r["HOME_FGA"], r["HOME_FTA"], r["HOME_FGM"], r["HOME_OREB"], r["HOME_TO"],
+            r["AWAY_FGA"], r["AWAY_FTA"], r["AWAY_FGM"], r["AWAY_OREB"], r["AWAY_TO"],
+            r["AWAY_DREB"], r["HOME_DREB"]
+        ),
+        axis=1,
+    )
+    games["AWAY_POSSESSIONS"] = games.apply(
+        lambda r: _poss(
+            r["AWAY_FGA"], r["AWAY_FTA"], r["AWAY_FGM"], r["AWAY_OREB"], r["AWAY_TO"],
+            r["HOME_FGA"], r["HOME_FTA"], r["HOME_FGM"], r["HOME_OREB"], r["HOME_TO"],
+            r["HOME_DREB"], r["AWAY_DREB"]
+        ),
+        axis=1,
+    )
+
+    # Ratings
+    games["HOME_OFF_RTG"] = games.apply(lambda r: _safe_div(r["HOME_PTS"], r["HOME_POSSESSIONS"]) * 100, axis=1)
+    games["HOME_DEF_RTG"] = games.apply(lambda r: _safe_div(r["AWAY_PTS"], r["HOME_POSSESSIONS"]) * 100, axis=1)
+    games["HOME_NET_RTG"] = games["HOME_OFF_RTG"] - games["HOME_DEF_RTG"]
+
+    games["AWAY_OFF_RTG"] = games.apply(lambda r: _safe_div(r["AWAY_PTS"], r["AWAY_POSSESSIONS"]) * 100, axis=1)
+    games["AWAY_DEF_RTG"] = games.apply(lambda r: _safe_div(r["HOME_PTS"], r["AWAY_POSSESSIONS"]) * 100, axis=1)
+    games["AWAY_NET_RTG"] = games["AWAY_OFF_RTG"] - games["AWAY_DEF_RTG"]
+
+    # Pace (per 48 minutes, using team minutes / 5 players)
+    games["PACE"] = games.apply(
+        lambda r: _safe_div(48 * (r["HOME_POSSESSIONS"] + r["AWAY_POSSESSIONS"]) / 2, _safe_div(r["HOME_MIN"], 5)),
+        axis=1,
+    )
+
+    # Shooting efficiency
+    for side in ["HOME", "AWAY"]:
+        fgm = games[f"{side}_FGM"]
+        fga = games[f"{side}_FGA"]
+        fg3m = games[f"{side}_FG3M"]
+        fg3a = games[f"{side}_FG3A"]
+        fta = games[f"{side}_FTA"]
+        ftm = games[f"{side}_FTM"]
+        pts = games[f"{side}_PTS"]
+
+        games[f"{side}_EFG"] = (fgm + 0.5 * fg3m) / fga.replace(0, pd.NA)
+        games[f"{side}_TS"] = pts / (2 * (fga + 0.44 * fta).replace(0, pd.NA))
+        games[f"{side}_3PAR"] = fg3a / fga.replace(0, pd.NA)
+        games[f"{side}_FTR"] = fta / fga.replace(0, pd.NA)
+        games[f"{side}_FT_PER_FGA"] = ftm / fga.replace(0, pd.NA)
+
+    # Rebounding percentages
+    games["HOME_OREB_PCT"] = games.apply(lambda r: _safe_div(r["HOME_OREB"], r["HOME_OREB"] + r["AWAY_DREB"]), axis=1)
+    games["AWAY_OREB_PCT"] = games.apply(lambda r: _safe_div(r["AWAY_OREB"], r["AWAY_OREB"] + r["HOME_DREB"]), axis=1)
+    games["HOME_DREB_PCT"] = games.apply(lambda r: _safe_div(r["HOME_DREB"], r["HOME_DREB"] + r["AWAY_OREB"]), axis=1)
+    games["AWAY_DREB_PCT"] = games.apply(lambda r: _safe_div(r["AWAY_DREB"], r["AWAY_DREB"] + r["HOME_OREB"]), axis=1)
+    games["HOME_REB_PCT"] = games.apply(lambda r: _safe_div(r["HOME_REB"], r["HOME_REB"] + r["AWAY_REB"]), axis=1)
+    games["AWAY_REB_PCT"] = games.apply(lambda r: _safe_div(r["AWAY_REB"], r["HOME_REB"] + r["AWAY_REB"]), axis=1)
+
+    # Playmaking / turnovers
+    for side in ["HOME", "AWAY"]:
+        games[f"{side}_AST_PCT"] = games.apply(lambda r: _safe_div(r[f"{side}_AST"], r[f"{side}_FGM"]), axis=1)
+        games[f"{side}_AST_TOV"] = games.apply(lambda r: _safe_div(r[f"{side}_AST"], r[f"{side}_TO"]), axis=1)
+        games[f"{side}_AST_RATIO"] = games.apply(
+            lambda r: _safe_div(r[f"{side}_AST"], r[f"{side}_POSSESSIONS"]) * 100, axis=1
+        )
+        games[f"{side}_TO_PCT"] = games.apply(
+            lambda r: _safe_div(r[f"{side}_TO"], r[f"{side}_POSSESSIONS"]) * 100, axis=1
+        )
+
+    # PIE approximation
+    def _pie(row, side):
+        opp = "AWAY" if side == "HOME" else "HOME"
+        num = (
+            row[f"{side}_PTS"] + row[f"{side}_FGM"] + row[f"{side}_FTM"] - row[f"{side}_FTA"]
+            + row[f"{side}_OREB"] + row[f"{side}_AST"] + row[f"{side}_STL"] + row[f"{side}_BLK"] - row[f"{side}_TO"]
+        )
+        den = num + (
+            row[f"{opp}_PTS"] + row[f"{opp}_FGM"] + row[f"{opp}_FTM"] - row[f"{opp}_FTA"]
+            + row[f"{opp}_OREB"] + row[f"{opp}_AST"] + row[f"{opp}_STL"] + row[f"{opp}_BLK"] - row[f"{opp}_TO"]
+        )
+        return _safe_div(num, den)
+
+    games["HOME_PIE"] = games.apply(lambda r: _pie(r, "HOME"), axis=1)
+    games["AWAY_PIE"] = games.apply(lambda r: _pie(r, "AWAY"), axis=1)
+
+    # Differentials (home - away) for useful model features
+    diff_pairs = [
+        "OFF_RTG",
+        "DEF_RTG",
+        "NET_RTG",
+        "EFG",
+        "TS",
+        "3PAR",
+        "FTR",
+        "FT_PER_FGA",
+        "OREB_PCT",
+        "DREB_PCT",
+        "REB_PCT",
+        "AST_PCT",
+        "AST_TOV",
+        "AST_RATIO",
+        "TO_PCT",
+        "PIE",
+    ]
+    for metric in diff_pairs:
+        games[f"{metric}_DIFF"] = games[f"HOME_{metric}"] - games[f"AWAY_{metric}"]
+
     logger.info(
-        f"Saved dataset to {paths.DATASET_CSV} with {len(dataset)} rows and {dataset.shape[1]} columns"
+        f"Built game-level dataset with {len(games)} rows. "
+        f"Mean HOME_MARGIN={games['HOME_MARGIN'].mean():.2f}"
     )
+
+    # 7. Save to processed
+    paths.PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
+    out_path = paths.PROCESSED_DIR / "dataset.csv"
+    games.to_csv(out_path, index=False)
+    logger.info(f"Saved dataset to {out_path.resolve()}")
+
+    # 8. Build combined player+team advanced view (one row per player per game)
+    team_rows = []
+    base_stats = [
+        "PTS",
+        "REB",
+        "OREB",
+        "DREB",
+        "AST",
+        "STL",
+        "BLK",
+        "TO",
+        "PF",
+        "FGM",
+        "FGA",
+        "FG3M",
+        "FG3A",
+        "FTM",
+        "FTA",
+        "MIN",
+        "POSSESSIONS",
+        "OFF_RTG",
+        "DEF_RTG",
+        "NET_RTG",
+        "EFG",
+        "TS",
+        "3PAR",
+        "FTR",
+        "FT_PER_FGA",
+        "OREB_PCT",
+        "DREB_PCT",
+        "REB_PCT",
+        "AST_PCT",
+        "AST_TOV",
+        "AST_RATIO",
+        "TO_PCT",
+        "PIE",
+    ]
+
+    for side in ["HOME", "AWAY"]:
+        opp = "AWAY" if side == "HOME" else "HOME"
+        row = pd.DataFrame({
+            "GAME_ID": games["GAME_ID"],
+            "GAME_DATE": games["GAME_DATE"],
+            "TEAM_ID": games[f"{side}_TEAM_ID"].astype(str),
+            "OPP_TEAM_ID": games[f"{opp}_TEAM_ID"].astype(str),
+            "IS_HOME": side == "HOME",
+            "PACE": games["PACE"],
+        })
+        for col in base_stats:
+            row[f"{col}"] = games[f"{side}_{col}"]
+        team_rows.append(row)
+
+    team_df = pd.concat(team_rows, ignore_index=True)
+
+    combined = players.merge(team_df, on=["GAME_ID", "TEAM_ID"], how="left", validate="many_to_one")
+    combined_out = paths.PROCESSED_DIR / "player_team_advanced.csv"
+    combined.to_csv(combined_out, index=False)
+    logger.info(f"Saved combined player + team advanced dataset to {combined_out.resolve()}")
+
+
+def main():
+    logger.info("=== Building enriched dataset (game-level) ===")
+    build_dataset()
+
 
 if __name__ == "__main__":
     main()

@@ -1,29 +1,27 @@
-import logging
-import sys
-from . import paths  # noqa
-from .. import config
+# src/utils/logging_config.py
 
-def setup_logging(name: str) -> logging.Logger:
+import logging
+from pathlib import Path
+
+def setup_logging(name: str):
+    """
+    Configure consistent logging for all pipeline modules.
+    """
     logger = logging.getLogger(name)
+    logger.setLevel(logging.INFO)
+
+    # Avoid duplicate handlers when run repeatedly
     if logger.handlers:
         return logger
 
-    logger.setLevel(config.LOG_LEVEL)
+    console = logging.StreamHandler()
+    console.setLevel(logging.INFO)
 
-    fmt = logging.Formatter(
+    formatter = logging.Formatter(
         "[%(asctime)s] [%(levelname)s] [%(name)s] %(message)s",
         datefmt="%Y-%m-%d %H:%M:%S",
     )
+    console.setFormatter(formatter)
 
-    ch = logging.StreamHandler(sys.stdout)
-    ch.setFormatter(fmt)
-    logger.addHandler(ch)
-
-    try:
-        fh = logging.FileHandler(paths.LOG_FILE, encoding="utf-8")
-        fh.setFormatter(fmt)
-        logger.addHandler(fh)
-    except Exception:
-        pass
-
+    logger.addHandler(console)
     return logger
