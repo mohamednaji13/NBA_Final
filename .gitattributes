@@ -1,1 +1,2 @@
+/Users/mohamed/Desktop/Projects/NBA_Final/data/processed/data.csv filter=lfs diff=lfs merge=lfs -text
 data/processed/*.csv filter=lfs diff=lfs merge=lfs -text
